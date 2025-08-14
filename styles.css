@@ -1,0 +1,88 @@
+:root {
+    --base-clr: #2a384a;
+}
+
+* {
+    font-family: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5rem;
+}
+
+header {
+    position: relative;
+    padding: 0 20px;
+}
+
+body {
+    background-color: var(--base-clr);
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start; /* align to left */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 50px;
+}
+
+.card {
+    width: 300px;
+    height: 200px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar ul {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    color: #f0f0f0;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar img {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+.sidebar {
+    position: fixed;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80px;
+    padding-top: 10px;
+}
+
+.img-link img {
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.img-link img:hover {
+    scale: 1.1;
+    transition: transform 0.2s ease;
+}
