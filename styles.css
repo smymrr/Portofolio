@@ -1,5 +1,6 @@
 :root {
-    --base-clr: #2a384a;
+    --base-clr: #0a1930;
+    --select-clr: #121f33;
 }
 
 * {
@@ -38,27 +39,57 @@ body {
 }
 
 .navbar {
-    width: 100%;
-    height: 60px;
-    max-width: 1500px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	margin: 0 auto;
+	width: 100%;
+	height: 80px;
 }
 
 .navbar ul {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    color: #f0f0f0;
-    list-style: none;
-    gap: 20px;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
 }
 
-.navbar img {
-    width: 120px;
-    height: auto;
-    object-fit: contain;
+.navbar a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.navbar li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100px;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+.navbar li:hover {
+	background-color: #121f33;
+    scale: 1.1;
+}
+
+.navbar .logo {
+    width: 100px;
+	height: calc(100% + 30px);
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+	margin-right: auto;
+    margin-left: -15px;
+}
+
+.logo img {
+	width: auto;
+	height: 100%;
+    max-height: 100%;
+	object-fit: cover;
 }
 
 .sidebar {
