@@ -27,15 +27,17 @@ body {
 }
 
 .card {
-    width: 300px;
+    width: 80%;
     height: 200px;
-    background-color: #f0f0f0;
+    background-color: #333f52;
+    color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flexbox;
     align-items: center;
     justify-content: center;
     padding: 5px;
+    margin: 0 auto;
 }
 
 .navbar {
@@ -95,13 +97,14 @@ body {
 .sidebar {
     position: fixed;
     top: 50%;
-    left: 50px;
+    left: 3vw;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 80px;
+    width: 100%;
+    max-width: 80px;
     padding-top: 10px;
 }
 
@@ -114,6 +117,6 @@ body {
 }
 
 .img-link img:hover {
-    scale: 1.1;
+    scale: 1.2;
     transition: transform 0.2s ease;
 }
