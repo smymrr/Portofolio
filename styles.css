@@ -43,6 +43,7 @@ header {
     align-items: center;
 
     height: 100%;
+    margin-right: 20px;
 }
 
 .navbar li {
@@ -101,12 +102,11 @@ header {
     padding-top: 10px;
 }
 
-
 .img-link img {
     width: 50px;
     height: 50px;
     object-fit: contain;
-
+    filter: hue-rotate(90deg);
     background-color: transparent;
     cursor: pointer;
 }
@@ -118,8 +118,8 @@ header {
 
 .line {
   width: 1px;
-  height: 37vh;   /* adjust length */
-  background-color: var(--text-clr);
+  height: 20vh;   /* adjust length */
+  background-color: #777777;
   margin-top: 20px;
 }
 
@@ -131,6 +131,19 @@ header {
     cursor: pointer;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+#Resume {
+  margin-left: 35px;
+  font-size: 20px;
+  font-weight: 100;
+  text-decoration: none;
+  color: var(--accent-clr);
+  border: 1px solid var(--accent-clr);
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px 35px;
 }
 
 /* Main content */
@@ -205,6 +218,16 @@ main {
 
 
 /* Card container */
+
+.box {
+    background-color: #1e2a38;  /* slightly lighter than background */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;

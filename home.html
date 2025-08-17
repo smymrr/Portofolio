@@ -10,45 +10,10 @@
 <body>
 
     <!-- Header -->
-    <header>
-        <!-- ===== Navbar ===== -->
-        <div class="navbar">
-            <!-- Logo -->
-            <div class="logo">
-                <img src="Images/Logo2.png" alt="Logo">
-            </div>
-
-            <!-- Nav Links -->
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-
-        <!-- Sidebar Socials -->
-        <div class="sidebar">
-            <a href="https://github.com/smymrr" class="img-link" >
-                <img src="Images/GitHub.png" alt="GitHub">
-            </a>
-
-            <a href="https://www.linkedin.com/in/sergian-mochamad-17587a37a/" class="img-link">
-                <img src="Images/LinkedIn.png" alt="LinkedIn" id="LinkedIn">
-            </a>
-
-            <a href="https://x.com/Yurashmits" class="img-link">
-                <img src="Images/Twitter.png" alt="Twitter">
-            </a>
-            
-            <a href="https://www.instagram.com/smymr_/" class="img-link">
-                <img src="Images/Instagram.png" alt="Instagram">
-            </a>
-
-            <div class="line"></div>
-        </div>
-    </header>
-
+     <header>
+        <div id="navbar"></div>
+        <div id="socials"></div>
+     </header>
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
@@ -64,9 +29,10 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer>
-    </footer>
-
+    <script src="Assets/Global/include.js"></script>
+    <script>
+        includeHTML("navbar", "Assets/Global/navbar.html");
+        includeHTML("socials", "Assets/Global/socials.html");
+    </script>
 </body>
 </html>
