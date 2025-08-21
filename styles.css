@@ -1,136 +1,146 @@
 /* Root variables */
 :root {
-    --base-clr: #0a1930;
-    --hover-clr: #121f33;
-    --accent-clr: #64ffda;
-    --text-clr: white;
-    --suptext-clr: #8892b0;
+  --base-clr: #0a1930;
+  --hover-clr: #121f33;
+  --accent-clr: #64ffda;
+  --text-clr: white;
+  --suptext-clr: #8892b0;
 }
 
 /* Base styles */
+
+/* Hide scrollbar but keep scrolling */
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+* {
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+}
+
 html {
-    font-family: Poppins, "Segoe UI", Tahoma,   Geneva, Verdana, sans-serif;
-    line-height: 1.5rem;
+  font-family: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5rem;
 }
 
 body {
-    background-color: var(--base-clr);
-    font-family: 'Inter', sans-serif;
-    color: #ccd6f6; /* default text color */
+  background-color: var(--base-clr);
+  font-family: "Inter", sans-serif;
+  color: white;
 }
 
 header {
-    position: relative;
-    padding: 0 20px;
+  position: relative;
+  padding: 0 20px;
 }
 
 /* Navbar */
 .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: var(--base-clr);
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 80px;
+  top: 10px;
+  margin: 0 auto;
+  text-decoration: none;
+  z-index: 1000;
+  transition: top 0.05s ease;
+}
 
-    width: 100%;
-    height: 80px;
-    margin: 0 auto;
-
-    text-decoration: none;
+.navbar.scrolled {
+  top: 0;
 }
 
 .navbar ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: 100%;
-    margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-right: 5%;
+  bottom: 0;
 }
 
 .navbar li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100px;
-    height: 100%;
-
-    font-size: 20px;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100%;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .navbar a {
-    text-decoration: none;
-    color: var(--text-clr);
+  text-decoration: none;
+  color: var(--text-clr);
 }
 
 .navbar li:hover {
-    background-color: var(--hover-clr);
-    scale: 1.1;
+  background-color: var(--hover-clr);
+  scale: 1.1;
 }
 
 /* Logo */
 .navbar .logo {
-    margin-left: -15px;
-    margin-right: auto;
-
-    width: 100px;
-    height: calc(100% + 30px);
-
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--text-clr);
+  margin-left: -15px;
+  margin-right: auto;
+  width: 100px;
+  height: calc(100% + 30px);
+  bottom: 0;
 }
 
 .logo img {
-    width: auto;
-    height: 100%;
-    max-height: 100%;
-    object-fit: cover;
+  width: auto;
+  height: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 .sidebar {
-    position: fixed;
-    bottom: 0;
-    left: 2.6vw;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 100%;
-    max-width: 80px;
-    padding-top: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 2.6vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 80px;
+  padding-top: 10px;
 }
 
 .img-link img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    filter: hue-rotate(90deg);
-    background-color: transparent;
-    cursor: pointer;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: hue-rotate(90deg);
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .img-link img:hover {
-    scale: 1.2;
-    transition: transform 0.2s ease;
+  scale: 1.2;
+  transition: transform 0.2s ease;
 }
 
 .line {
   width: 1px;
-  height: 20vh;   /* adjust length */
+  height: 20vh; /* adjust length */
   background-color: #777777;
   margin-top: 20px;
 }
 
 #LinkedIn {
-    width: 35px;
-    height: 35px;
-    object-fit: contain;
-    background-color: transparent;
-    cursor: pointer;
-    margin-top: 5px;
-    margin-bottom: 5px;
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  background-color: transparent;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #Resume {
@@ -146,15 +156,20 @@ header {
   padding: 10px 35px;
 }
 
+#Resume:hover {
+  background-color: var(--hover-clr);
+  color: var(--text-clr);
+}
+
 /* Main content */
 main {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 /* Hero section */
 .hero {
-    margin-left: 250px;
-    margin-top: 130px;
+  margin-left: 250px;
+  margin-top: 25vh;
 }
 
 .hero-intro {
@@ -164,9 +179,9 @@ main {
 }
 
 .hero-name {
-  font-size: 70px;   
-  font-weight: 700;  
-  color: var(--text-clr);  
+  font-size: 70px;
+  font-weight: 700;
+  color: var(--text-clr);
   margin-top: 50px;
   margin-bottom: 50px;
 }
@@ -174,16 +189,15 @@ main {
 .hero-subtitle {
   font-size: 65px;
   font-weight: 700;
-  color: var(--suptext-clr); 
+  color: var(--suptext-clr);
   margin-top: 10px;
   margin-bottom: 30px;
   line-height: 1.2;
 }
 
-
 .hero-description {
   font-size: 20px;
-  max-width: 600px;
+  max-width: 750px;
   color: var(--suptext-clr);
   line-height: 1.5;
 }
@@ -198,61 +212,126 @@ main {
 }
 
 .hero button {
-    margin-top: 30px;
-    font-size: 20px;
-    font-weight: 100;
-    text-decoration: none;
-    color: var(--accent-clr);
-    border: 1px solid var(--accent-clr);
-    border-radius: 5px;
-    background-color: transparent;
-    cursor: pointer;
-    padding: 15px 60px;
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 100;
+  text-decoration: none;
+  color: var(--accent-clr);
+  border: 1px solid var(--accent-clr);
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 15px 60px;
 }
 
 .hero a {
-    font-size: 18px;
-    text-decoration: none;
-    color: var(--accent-clr);
+  font-size: 18px;
+  text-decoration: none;
+  color: var(--accent-clr);
 }
 
+/* About me */
 
-/* Card container */
-
-.box {
-    background-color: #1e2a38;  /* slightly lighter than background */
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    max-width: 800px;
-    margin: 2rem auto;
+.profile-container {
+  display: flex;
+  background-color: var(--base-clr);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-
-    gap: 20px;
-    padding: 50px;
+#sect-divide {
+  width: 80%;
+  margin: 3% auto;
 }
 
-.card {
-    display: flexbox;
-    justify-content: center;
-    align-items: center;
-
-    width: 80%;
-    height: 200px;
-    margin: 0 auto;
-    padding: 5px;
-
-    background-color: #333f52;
-    color: var(--text-clr);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.profile-container .pfp {
+  margin-left: -15px;
+  margin-right: 2%;
+  border-radius: 10px;
+  width: 20%;
+  height: auto;
 }
+
+.profile-container h1 {
+  font-size: 4rem;
+  color: var(--text-clr);
+  margin-bottom: 3%;
+}
+
+.profile-container p {
+  font-size: 1.5rem;
+  color: var(--suptext-clr);
+  margin-bottom: 20px;
+}
+
+.edu-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--base-clr);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.edu-container .logos {
+  margin-left: 20px;
+  margin-right: 2%;
+  border-radius: 10px;
+  width: 5%;
+  height: auto;
+}
+
+.edu-container .school-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.school-container div {
+  margin-left: 0.2rem;
+}
+
+.school-container h1 {
+  font-size: 2rem;
+  color: var(--text-clr);
+  margin-bottom: 1%;
+}
+
+.school-container p {
+  font-size: 0.8rem;
+  color: var(--suptext-clr);
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--base-clr);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.contact-container img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: hue-rotate(90deg);
+  background-color: transparent;
+  cursor: pointer;
+}
+
 
 /* Content adjustment */
 
