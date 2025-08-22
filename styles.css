@@ -1,6 +1,7 @@
 /* Root variables */
 :root {
   --base-clr: #0a1930;
+  --base2-clr: #6f86a8;
   --hover-clr: #121f33;
   --accent-clr: #64ffda;
   --text-clr: white;
@@ -234,7 +235,8 @@ main {
 
 .profile-container {
   display: flex;
-  background-color: var(--base-clr);
+  align-items: flex-start;
+  background-color: var(--base2-clr);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -250,12 +252,46 @@ main {
   margin: 3% auto;
 }
 
-.profile-container .pfp {
+.profile {
+  background-color: violet;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-right: 1%;
+}
+
+/* .profile-container img {
   margin-left: -15px;
   margin-right: 2%;
-  border-radius: 10px;
   width: 20%;
   height: auto;
+} */
+
+.contacts {
+  background-color: wheat;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.contacts img {
+  width: 10%;
+  height: auto;
+  background-color: seagreen;
+  left: 0;
+}
+
+.contacts p {
+  font-size: 2rem;
+  color: var(--text-clr);
+  margin-left: 10px;
+}
+
+#pfp {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
 }
 
 .profile-container h1 {
@@ -268,6 +304,19 @@ main {
   font-size: 1.5rem;
   color: var(--suptext-clr);
   margin-bottom: 20px;
+}
+
+.biography-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--base-clr);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .edu-container {
@@ -311,7 +360,7 @@ main {
   color: var(--suptext-clr);
 }
 
-.contact-container {
+.skills-container {
   display: flex;
   flex-direction: column;
   background-color: var(--base-clr);
@@ -320,18 +369,39 @@ main {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   width: 100%;
   max-width: 1500px;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5vh;
 }
 
-.contact-container img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  filter: hue-rotate(90deg);
-  background-color: transparent;
-  cursor: pointer;
+.skills-container .c-skills {
+  display: flex;
+  flex-direction: row;
+  margin: 2% auto;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
+.skills-container .skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  width: 8%;
+  height: 10%;
+}
+
+.skills img {
+  width: 100%;
+  height: auto;
+}
+
+#github-about {
+  width: calc(100% + 40px);
+  height: auto;
+}
 
 /* Content adjustment */
 
