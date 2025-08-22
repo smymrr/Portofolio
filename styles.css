@@ -6,6 +6,7 @@
   --accent-clr: #64ffda;
   --text-clr: white;
   --suptext-clr: #8892b0;
+  --about-box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.3)
 }
 
 /* Base styles */
@@ -23,6 +24,7 @@
 html {
   font-family: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5rem;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -113,6 +115,11 @@ header {
   padding-top: 10px;
 }
 
+#sidebar-2 {
+  left: auto;
+  right: 2.6vw;
+}
+
 .img-link img {
   width: 50px;
   height: 50px;
@@ -127,11 +134,25 @@ header {
   transition: transform 0.2s ease;
 }
 
+.rotated-text {
+  transform: rotate(90deg);
+  color: var(--suptext-clr);
+  display: inline-block; 
+}
+
+
 .line {
   width: 1px;
-  height: 20vh; /* adjust length */
+  height: 20vh;
   background-color: #777777;
-  margin-top: 20px;
+  margin-top: 2%;
+}
+
+.line-2 {
+  width: 1px;
+  height: 30vh;
+  background-color: #777777;
+  margin-top: 100%;
 }
 
 #LinkedIn {
@@ -236,10 +257,10 @@ main {
 .profile-container {
   display: flex;
   align-items: flex-start;
-  background-color: var(--base2-clr);
+  background-color: var(--base-clr);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--about-box-shadow);
   width: 100%;
   max-width: 1500px;
   margin-left: auto;
@@ -252,47 +273,12 @@ main {
   margin: 3% auto;
 }
 
-.profile {
-  background-color: violet;
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  margin-right: 1%;
-}
-
-/* .profile-container img {
+.profile-container img {
   margin-left: -15px;
   margin-right: 2%;
   width: 20%;
   height: auto;
-} */
-
-.contacts {
-  background-color: wheat;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.contacts img {
-  width: 10%;
-  height: auto;
-  background-color: seagreen;
-  left: 0;
-}
-
-.contacts p {
-  font-size: 2rem;
-  color: var(--text-clr);
-  margin-left: 10px;
-}
-
-#pfp {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-}
+} 
 
 .profile-container h1 {
   font-size: 4rem;
@@ -312,7 +298,7 @@ main {
   background-color: var(--base-clr);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--about-box-shadow);
   width: 100%;
   max-width: 1500px;
   margin-left: auto;
@@ -325,7 +311,7 @@ main {
   background-color: var(--base-clr);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--about-box-shadow);
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
@@ -356,7 +342,7 @@ main {
 }
 
 .school-container p {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--suptext-clr);
 }
 
@@ -366,7 +352,7 @@ main {
   background-color: var(--base-clr);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--about-box-shadow);
   width: 100%;
   max-width: 1500px;
   margin-right: auto;
@@ -396,6 +382,11 @@ main {
 .skills img {
   width: 100%;
   height: auto;
+}
+
+.skills img:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
 }
 
 #github-about {
