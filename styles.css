@@ -3,9 +3,10 @@
   --base-clr: #0a1930;
   --base2-clr: #6f86a8;
   --hover-clr: #121f33;
-  --accent-clr: #64ffda;
+  --accent-clr: #00f7ff;
   --text-clr: white;
   --suptext-clr: #8892b0;
+  --transition: normal 0.25s ease;
   --about-box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.3)
 }
 
@@ -25,12 +26,17 @@ html {
   font-family: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5rem;
   scrollbar-gutter: stable;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--base-clr);
   font-family: "Inter", sans-serif;
   color: white;
+}
+
+body::before {
+  transform: translate(var(--bg-x, 0), var(--bg-y, 0));
 }
 
 header {
@@ -51,10 +57,14 @@ header {
   top: 10px;
   margin: 0 auto;
   text-decoration: none;
-  transition: top 0.05s ease;
+  transition: var(--transition);
 }
 
-.navbar.scrolled {
+.navbar.scrolled-down {
+  transform: translateY(-100%);;
+}
+
+.navbar.scrolled-up {
   top: 0;
   box-shadow: 0 0 6px 12px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
@@ -77,16 +87,16 @@ header {
   height: 100%;
   font-size: 20px;
   cursor: pointer;
+  
+  &:hover {
+    background-color: var(--hover-clr);
+  scale: 1.1;
+  }
 }
 
 .navbar a {
   text-decoration: none;
   color: var(--text-clr);
-}
-
-.navbar li:hover {
-  background-color: var(--hover-clr);
-  scale: 1.1;
 }
 
 /* Logo */
@@ -105,6 +115,7 @@ header {
   object-fit: cover;
 }
 
+/* Socials */
 .sidebar {
   position: fixed;
   bottom: 0;
@@ -117,60 +128,55 @@ header {
   padding-top: 10px;
 }
 
+.line {
+  width: 1px;
+  height: 15vh;
+  background-color: var(--suptext-clr);
+  margin-top: 2vh;
+}
+
+.line-2 {
+  width: 1px;
+  height: 25vh;
+  background-color: var(--suptext-clr);
+  margin-top: 10vh;
+}
+
+.rotated-text {
+  transform: rotate(90deg);
+  background-color: transparent;
+  text-decoration: none;
+  color: var(--suptext-clr);
+  transition: var(--transition);
+
+  &:hover {
+    transform: scale(1.05) rotate(90deg) translateX(-5px);
+  color: var(--accent-clr);
+  }
+}
+
 #sidebar-2 {
   left: auto;
   right: 2.6vw;
 }
 
-.img-link img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  filter: hue-rotate(90deg);
+.img-link svg {
+  width: 40px;
+  margin-top: 10%;
+  fill: var(--suptext-clr);
   background-color: transparent;
   cursor: pointer;
-}
+  transition: var(--transition);
 
-.img-link img:hover {
-  scale: 1.2;
-  transition: transform 0.2s ease;
-}
-
-.rotated-text {
-  transform: rotate(90deg);
-  color: var(--suptext-clr);
-  display: inline-block; 
-}
-
-
-.line {
-  width: 1px;
-  height: 20vh;
-  background-color: #777777;
-  margin-top: 2%;
-}
-
-.line-2 {
-  width: 1px;
-  height: 30vh;
-  background-color: #777777;
-  margin-top: 100%;
-}
-
-#LinkedIn {
-  width: 35px;
-  height: 35px;
-  object-fit: contain;
-  background-color: transparent;
-  cursor: pointer;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  &:hover {
+    transform: scale(1.1) translateY(-5px);
+  fill: var(--accent-clr);
+  }
 }
 
 #Resume {
   margin-left: 35px;
   font-size: 20px;
-  font-weight: 100;
   text-decoration: none;
   color: var(--accent-clr);
   border: 1px solid var(--accent-clr);
@@ -178,11 +184,12 @@ header {
   background-color: transparent;
   cursor: pointer;
   padding: 10px 35px;
-}
+  transition: var(--transition);
 
-#Resume:hover {
-  background-color: var(--hover-clr);
-  color: var(--text-clr);
+  &:hover {
+    background-color: var(--accent-clr);
+ color: var(--base-clr);
+  }
 }
 
 /* Main content */
@@ -190,11 +197,15 @@ main {
   padding: 2rem;
 }
 
-/* Hero section */
-.hero {
-  margin-left: 250px;
-  margin-top: 25vh;
+.sect {
+  height: 60vh;
+  background-color: var(--hover-clr);
+  justify-content: center;
+  padding-top: 25vh;
+  padding-left: 15vw;
 }
+
+/* Hero section */
 
 .hero-intro {
   color: var(--accent-clr);
@@ -220,6 +231,7 @@ main {
 }
 
 .hero-description {
+  margin-bottom: 6vh;
   font-size: 20px;
   max-width: 750px;
   color: var(--suptext-clr);
@@ -227,177 +239,188 @@ main {
 }
 
 .hero-description a {
-  color: var(--text-clr);
+  color: var(--accent-clr);
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-.hero-description a:hover {
-  text-decoration: underline;
-}
-
-.hero button {
-  margin-top: 30px;
+#CTA-Btn {
   font-size: 20px;
-  font-weight: 100;
+  font-weight: 150;
   text-decoration: none;
+  letter-spacing: 0.2rem;
   color: var(--accent-clr);
   border: 1px solid var(--accent-clr);
   border-radius: 5px;
   background-color: transparent;
   cursor: pointer;
-  padding: 15px 60px;
+  padding: 15px 40px;
+  transition: var(--transition);
+
+  &:hover {
+    font-size: 22px;
+ background-color: var(--accent-clr);
+ color: var(--base-clr);
+  }
 }
 
-.hero a {
-  font-size: 18px;
-  text-decoration: none;
-  color: var(--accent-clr);
-}
+/* About Me Section */
 
-/* About me */
-
-.profile-container {
+.about {
   display: flex;
-  align-items: flex-start;
-  background-color: var(--base-clr);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--about-box-shadow);
+  flex-direction: row;
+  gap: 15%;
+}
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+  width: 60vh;
+}
+
+.about-intro {
+  width: 60vh;
+  margin-right: 15%;
+}
+
+.about-edu {
+  display: flex;
   width: 100%;
-  max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10vh;
+  justify-content: center;
 }
 
-#sect-divide {
-  width: 80%;
-  margin: 3% auto;
+.about-edu img {
+  display: block;
+  width: 70%;
+  height: 80%;
+  margin: 2% auto;
+  cursor: pointer;
+  object-fit: contain;
+  transition: var(--transition);
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
-.profile-container img {
-  margin-left: -15px;
-  margin-right: 2%;
-  border-radius: 20px;
-  width: 20%;
-  height: auto;
-} 
+.edu-item {
+  position: relative; /* Parent positioning for tooltip */
+  display: flex;
+  justify-content: center;
+}
 
-.profile-container h1 {
-  font-size: 4rem;
+.school-name {
+  position: absolute;
   color: var(--text-clr);
-  margin-bottom: 3%;
+  white-space: nowrap; /* Prevents text from wrapping */
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Prevents hidden text from being interactive */
+  margin: 100% auto;
+  transition: var(--transition); /* Smooth transition */
 }
 
-.profile-container p {
-  font-size: 1.5rem;
+.school-support {
+  position: absolute;
   color: var(--suptext-clr);
-  margin-bottom: 20px;
+  white-space: nowrap; /* Prevents text from wrapping */
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Prevents hidden text from being interactive */
+  margin: calc(100% + 30px) auto;
+  transition: var(--transition); /* Smooth transition */
 }
 
-.biography-container {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--base-clr);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--about-box-shadow);
-  width: 100%;
-  max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
+.school-class {
+  position: absolute;
+  color: var(--suptext-clr);
+  white-space: nowrap; /* Prevents text from wrapping */
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Prevents hidden text from being interactive */
+  margin: calc(100% + 60px) auto;
+  transition: var(--transition); /* Smooth transition */
 }
 
-.edu-container {
+.edu-item:hover .school-name {
+  opacity: 1;
+  visibility: visible;
+}
+
+.edu-item:hover .school-support {
+  opacity: 1;
+  visibility: visible;
+}
+
+.edu-item:hover .school-class {
+  opacity: 1;
+  visibility: visible;
+}
+
+.about-info { 
   display: flex;
   flex-direction: column;
-  background-color: var(--base-clr);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--about-box-shadow);
   width: 100%;
-  max-width: 1500px;
+  background-color: var(--base-clr);
+  box-shadow: var(--about-box-shadow);
   margin: 0 auto;
 }
 
-.edu-container .logos {
-  margin-left: 20px;
-  margin-right: 2%;
-  border-radius: 10px;
-  width: 5%;
-  height: auto;
-}
-
-.edu-container .school-container {
+.pfp {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  width: 50vh;
+  border-radius: 20px;
+  transition: var(--transition);
 }
 
-.school-container div {
-  margin-left: 0.2rem;
-}
-
-.school-container h1 {
-  font-size: 2rem;
+.pfp-name {
   color: var(--text-clr);
-  margin-bottom: 1%;
+  white-space: nowrap; /* Prevents text from wrapping */
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Prevents hidden text from being interactive */
+  transition: var(--transition); /* Smooth transition */
+  letter-spacing: 0.2rem;
 }
 
-.school-container p {
-  font-size: 1rem;
-  color: var(--suptext-clr);
-}
-
-.skills-container {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--base-clr);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--about-box-shadow);
+.pfp img {
   width: 100%;
-  max-width: 1500px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 5vh;
+  height: 100%;
 }
 
-.skills-container .c-skills {
-  display: flex;
-  flex-direction: row;
-  margin: 2% auto;
-  width: 100%;
-  justify-content: center;
-  flex-wrap: wrap;
+.pfp:hover img {
+  transform: scale(0.9);
 }
 
-.skills-container .skills {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 5vw;
-  margin-right: 5vw;
-  width: 8%;
-  height: 10%;
+.pfp:hover .pfp-name {
+  opacity: 1;
+  visibility: visible;
 }
 
-.skills img {
-  width: 100%;
-  height: auto;
+#SDN {
+  display: none;
 }
 
-.skills img:hover {
-  transform: scale(1.1);
-  transition: transform 0.2s ease;
+#SMP {
+  display: none;
 }
 
-#github-about {
-  width: calc(100% + 40px);
-  height: auto;
+#SMKN {
+  display: none;
 }
 
 /* Content adjustment */
+
+@media (max-width: 750px) {
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar-2 {
+    display: none;
+  }
+}
 
 @media (max-width: 1200px) {
   .hero h1 {
