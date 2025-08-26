@@ -58,10 +58,13 @@ header {
   margin: 0 auto;
   text-decoration: none;
   transition: var(--transition);
+  z-index: 1000;
 }
 
 .navbar.scrolled-down {
-  transform: translateY(-100%);;
+   top: 0;
+  box-shadow: 0 0 6px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
 }
 
 .navbar.scrolled-up {
@@ -70,19 +73,7 @@ header {
   backdrop-filter: blur(8px);
 }
 
-.navbar ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin-right: 5%;
-  bottom: 0;
-}
-
-.navbar li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.navbar a {
   width: 100px;
   height: 100%;
   font-size: 20px;
@@ -95,6 +86,9 @@ header {
 }
 
 .navbar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   color: var(--text-clr);
 }
@@ -139,7 +133,7 @@ header {
   width: 1px;
   height: 25vh;
   background-color: var(--suptext-clr);
-  margin-top: 10vh;
+  margin-top: calc(100% + 5vh);
 }
 
 .rotated-text {
@@ -175,6 +169,9 @@ header {
 }
 
 #Resume {
+  height: 42%;
+  width: 3%;
+  margin-right: 35px;
   margin-left: 35px;
   font-size: 20px;
   text-decoration: none;
@@ -199,7 +196,6 @@ main {
 
 .sect {
   height: 60vh;
-  background-color: var(--hover-clr);
   justify-content: center;
   padding-top: 25vh;
   padding-left: 15vw;
@@ -222,7 +218,7 @@ main {
 }
 
 .hero-subtitle {
-  font-size: 65px;
+  font-size: 60px;
   font-weight: 700;
   color: var(--suptext-clr);
   margin-top: 10px;
@@ -307,40 +303,62 @@ main {
 }
 
 .edu-item {
-  position: relative; /* Parent positioning for tooltip */
+  position: relative;
   display: flex;
   justify-content: center;
+}
+
+.pfp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vh;
+  border-radius: 20px;
+  transition: var(--transition);
+}
+
+/* Tooltip */
+
+.pfp-name {
+  color: var(--text-clr);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+  letter-spacing: 0.2rem;
 }
 
 .school-name {
   position: absolute;
   color: var(--text-clr);
-  white-space: nowrap; /* Prevents text from wrapping */
-  opacity: 0; /* Initially hidden */
-  pointer-events: none; /* Prevents hidden text from being interactive */
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
   margin: 100% auto;
-  transition: var(--transition); /* Smooth transition */
+  transition: var(--transition);
 }
 
 .school-support {
   position: absolute;
   color: var(--suptext-clr);
-  white-space: nowrap; /* Prevents text from wrapping */
-  opacity: 0; /* Initially hidden */
-  pointer-events: none; /* Prevents hidden text from being interactive */
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
   margin: calc(100% + 30px) auto;
-  transition: var(--transition); /* Smooth transition */
+  transition: var(--transition);
 }
 
 .school-class {
   position: absolute;
   color: var(--suptext-clr);
-  white-space: nowrap; /* Prevents text from wrapping */
-  opacity: 0; /* Initially hidden */
-  pointer-events: none; /* Prevents hidden text from being interactive */
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
   margin: calc(100% + 60px) auto;
-  transition: var(--transition); /* Smooth transition */
+  transition: var(--transition);
 }
+
+/* Hover effects for tooltips */
 
 .edu-item:hover .school-name {
   opacity: 1;
@@ -355,33 +373,6 @@ main {
 .edu-item:hover .school-class {
   opacity: 1;
   visibility: visible;
-}
-
-.about-info { 
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background-color: var(--base-clr);
-  box-shadow: var(--about-box-shadow);
-  margin: 0 auto;
-}
-
-.pfp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50vh;
-  border-radius: 20px;
-  transition: var(--transition);
-}
-
-.pfp-name {
-  color: var(--text-clr);
-  white-space: nowrap; /* Prevents text from wrapping */
-  opacity: 0; /* Initially hidden */
-  pointer-events: none; /* Prevents hidden text from being interactive */
-  transition: var(--transition); /* Smooth transition */
-  letter-spacing: 0.2rem;
 }
 
 .pfp img {
