@@ -74,6 +74,11 @@ header {
 }
 
 .navbar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-clr);
   width: 100px;
   height: 100%;
   font-size: 20px;
@@ -81,16 +86,13 @@ header {
   
   &:hover {
     background-color: var(--hover-clr);
-  scale: 1.1;
+    color: var(--accent-clr);
   }
 }
 
-.navbar a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: var(--text-clr);
+.navbar a.active {
+    background-color: var(--hover-clr);
+    color: var(--accent-clr);
 }
 
 /* Logo */
