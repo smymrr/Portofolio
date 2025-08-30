@@ -10,7 +10,9 @@
   --about-box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.3)
 }
 
-/* Base styles */
+/*
+========== BASE ==========
+*/
 
 /* Hide scrollbar but keep scrolling */
 ::-webkit-scrollbar {
@@ -44,7 +46,10 @@ header {
   padding: 0 20px;
 }
 
-/* Navbar */
+/*
+========== NAVIGATION ==========
+*/
+
 .navbar {
   background-color: transparent;
   display: flex;
@@ -59,6 +64,7 @@ header {
   text-decoration: none;
   transition: var(--transition);
   z-index: 1000;
+  gap: 10px;
 }
 
 .navbar.scrolled-down {
@@ -111,7 +117,10 @@ header {
   object-fit: cover;
 }
 
-/* Socials */
+/*
+========== SOCIALS ==========
+*/
+
 .sidebar {
   position: fixed;
   bottom: 0;
@@ -166,7 +175,7 @@ header {
 
   &:hover {
     transform: scale(1.1) translateY(-5px);
-  fill: var(--accent-clr);
+    fill: var(--accent-clr);
   }
 }
 
@@ -187,11 +196,14 @@ header {
 
   &:hover {
     background-color: var(--accent-clr);
- color: var(--base-clr);
+    color: var(--base-clr);
   }
 }
 
-/* Main content */
+/*
+========== MAIN ==========
+*/
+
 main {
   padding: 2rem;
 }
@@ -203,7 +215,9 @@ main {
   padding-left: 15vw;
 }
 
-/* Hero section */
+/*
+========== HERO ==========
+*/
 
 .hero-intro {
   color: var(--accent-clr);
@@ -265,7 +279,9 @@ main {
   }
 }
 
-/* About Me Section */
+/*
+========== ABOUT ==========
+*/
 
 .about {
   display: flex;
@@ -391,19 +407,83 @@ main {
   visibility: visible;
 }
 
-#SDN {
-  display: none;
+
+/*
+========== SKILLS ==========
+*/
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-top: 5%;
+  justify-content: center;
+  gap: 8%;
 }
 
-#SMP {
-  display: none;
+.skills .content {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  height: 15%;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+
+  &:hover svg{
+    transform: scale(1.1);
+  }
+
+  &:hover .skill-name {
+    opacity: 1;
+  visibility: visible;
+  }
 }
 
-#SMKN {
-  display: none;
+.content svg {
+  width: 100%;
+  height: calc(80% - 10px);
+  transition: var(--transition);
 }
 
-/* Content adjustment */
+.skill-name {
+  color: var(--text-clr);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+  letter-spacing: 0.2rem;
+}
+
+/*
+========== PROJECTS ==========
+*/
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-top: 5%;
+  justify-content: center;
+  gap: 8%;
+}
+
+.projects .content {
+  width: 30%;
+  height: 15%;
+  background-color: var(--hover-clr);
+}
+
+.content .project-img {
+  z-index: 0.9;
+  width: 19%;
+  height: auto;
+  position: absolute;
+}
+
+/*
+========== CONTENT ADJUSTMENT ==========
+*/
 
 @media (max-width: 750px) {
   .sidebar {
