@@ -5,16 +5,12 @@ window.addEventListener("scroll", () => {
   const currentScrollY = window.scrollY;
 
   if (currentScrollY < 10) {
-    navbar.classList.remove("scrolled-up", "scrolled-down");
+    navbar.classList.remove("scrolled");
     return;
   }
 
   if (currentScrollY > lastScrollY) {
-    navbar.classList.add("scrolled-down");
-    navbar.classList.remove("scrolled-up");
-  } else if (currentScrollY < lastScrollY) {
-    navbar.classList.add("scrolled-up");
-    navbar.classList.remove("scrolled-down");
+    navbar.classList.add("scrolled");
   }
 
   lastScrollY = currentScrollY;
