@@ -54,6 +54,37 @@ header {
   padding: 0 20px;
 }
 
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: var(--suptext-clr);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--suptext-clr);
+  transition: var(--transition);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--accent-clr);
+  }
+}
+
+#credit {
+  text-decoration: none;
+  color: var(--suptext-clr);
+  transition: var(--transition);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--accent-clr);
+  }
+}
+
 /*
 ========== NAVIGATION ==========
 */
@@ -79,15 +110,6 @@ header {
   top: 0;
   box-shadow: 0 0 6px 12px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
-}
-
-.navbar ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  gap: 10px;
 }
 
 .navbar a {
@@ -262,6 +284,7 @@ main {
   max-width: 750px;
   color: var(--suptext-clr);
   line-height: 1.5;
+  transition: var(--transition);
 }
 
 .hero-description a {
@@ -315,6 +338,8 @@ main {
   width: 60vh;
   margin-right: 15%;
 }
+
+/* Education */
 
 .about-edu {
   display: flex;
@@ -475,10 +500,6 @@ main {
 ========== PROJECTS ==========
 */
 
-/*
-========== PROJECTS ==========
-*/
-
 .project-contents {
   display: flex;
   flex-direction: row;
@@ -504,6 +525,8 @@ main {
     border: 1px solid rgba(0, 247, 255, 0.336)  ;
   }
 }
+
+/* Details */
 
 .project-contents .right {
   display: flex;
@@ -569,16 +592,7 @@ main {
   }
 }
 
-.overlay {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    transition: var(--transition);
-}
+/* Toggle star animation */
 
 .title input[type="checkbox"] {
   display: none;
@@ -591,6 +605,108 @@ main {
 .title label input[type="checkbox"]:checked  ~ .img-2 {
   animation: starAnim 0.5s forwards;
   display: inline;
+}
+
+/*
+========== CONTACTS ==========
+*/
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  gap: 15%;
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  width: 60vh;
+}
+
+.contact-intro {
+  width: 60vh;
+  margin-right: 15%;
+}
+
+/* Education */
+
+.contact-socials {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+
+.content-socials a {
+  text-decoration: none;
+}
+
+.content-socials .socials svg {
+  width: 40px;
+  fill: var(--suptext-clr);
+  background-color: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover {
+    transform: scale(1.1) translateY(-5px);
+    fill: var(--accent-clr);
+  }
+}
+
+.edu-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.pfp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vh;
+  border-radius: 20px;
+  transition: var(--transition);
+}
+
+/* Tooltip */
+
+.GitHub-name {
+  color: var(--text-clr);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+  letter-spacing: 0.2rem;
+}
+
+.school-name {
+  position: absolute;
+  color: var(--text-clr);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  margin: 100% auto;
+  transition: var(--transition);
+}
+
+.school-support {
+  position: absolute;
+  color: var(--suptext-clr);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  margin: calc(100% + 30px) auto;
+  transition: var(--transition);
+}
+
+.school-class {
+  position: absolute;
+  color: var(--suptext-clr);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  margin: calc(100% + 60px) auto;
+  transition: var(--transition);
 }
 
 /*
