@@ -86,7 +86,7 @@ header {
   color: var(--text-clr);
   width: auto;
   height: auto;
-  font-size: 20px;
+  font-size: 1.2rem;
   cursor: pointer;
   margin-left: 1%;
   
@@ -116,7 +116,7 @@ header {
   width: 3%;
   margin-right: 35px;
   margin-left: 35px;
-  font-size: 20px;
+  font-size: 1.2rem;
   text-decoration: none;
   color: var(--accent-clr);
   border: 1px solid var(--accent-clr);
@@ -206,11 +206,12 @@ main {
 .sect {
   height: auto;
   justify-content: center;
-  padding: 25vh 15vw;
+  padding-top: 25vh;
+  padding-left: 15vw;
 }
 
 .sect .title {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 1000;
   color: var(--text-clr);
   margin-bottom: 20px;
@@ -535,7 +536,7 @@ main {
 .right .project-link {
   display: inline-block;
   width: 40%;
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 150;
   text-decoration: none;
   letter-spacing: 0.2rem;
@@ -585,6 +586,13 @@ main {
 */
 
 @media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  .sect {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
   /* Hide the desktop menu */
   .navbar a {
     display: none;
