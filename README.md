@@ -1,1 +1,3 @@
-Website layout is inspired by Brittany Chiang (https://brittanychiang.com/)
+Built by Sergian Mochamad (Yurashmits)
+
+Layout & References by Brittany Chiang (https://brittanychiang.com/)
