@@ -33,6 +33,7 @@
 }
 
 html {
+  font-size: 16px;
   font-family: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5rem;
   scrollbar-gutter: stable;
@@ -43,10 +44,6 @@ body {
   background-color: var(--base-clr);
   font-family: "Inter", sans-serif;
   color: white;
-}
-
-body::before {
-  transform: translate(var(--bg-x, 0), var(--bg-y, 0));
 }
 
 header {
@@ -120,7 +117,7 @@ footer a {
   color: var(--text-clr);
   width: auto;
   height: auto;
-  font-size: 20px;
+  font-size: 1.2rem;
   cursor: pointer;
   margin-left: 1%;
   
@@ -150,7 +147,7 @@ footer a {
   width: 3%;
   margin-right: 35px;
   margin-left: 35px;
-  font-size: 20px;
+  font-size: 1.2rem;
   text-decoration: none;
   color: var(--accent-clr);
   border: 1px solid var(--accent-clr);
@@ -245,7 +242,7 @@ main {
 }
 
 .sect .title {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 1000;
   color: var(--text-clr);
   margin-bottom: 20px;
@@ -257,12 +254,12 @@ main {
 
 .hero-intro {
   color: var(--accent-clr);
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
 .hero-name {
-  font-size: 70px;
+  font-size: 4.4rem;
   font-weight: 700;
   color: var(--text-clr);
   margin-top: 50px;
@@ -270,7 +267,7 @@ main {
 }
 
 .hero-subtitle {
-  font-size: 60px;
+  font-size: 3.8rem;
   font-weight: 700;
   color: var(--suptext-clr);
   margin-top: 10px;
@@ -280,7 +277,7 @@ main {
 
 .hero-description {
   margin-bottom: 6vh;
-  font-size: 20px;
+  font-size: 1.2rem;
   max-width: 750px;
   color: var(--suptext-clr);
   line-height: 1.5;
@@ -298,7 +295,7 @@ main {
 
 #CTA-Btn {
   display: inline-block;
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 150;
   text-decoration: none;
   letter-spacing: 0.2rem;
@@ -538,7 +535,7 @@ main {
 
 .right .title {
   display: flex;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-clr);
   gap: 10px;
@@ -562,7 +559,7 @@ main {
 }
 
 .right .captions {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--suptext-clr);
   margin-top: 10px;
   margin-bottom: 30px;
@@ -571,7 +568,7 @@ main {
 .right .project-link {
   display: inline-block;
   width: 40%;
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 150;
   text-decoration: none;
   letter-spacing: 0.2rem;
@@ -713,7 +710,43 @@ main {
 ========== CONTENT ADJUSTMENT ==========
 */
 
-@media (max-width: 750px) {
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  .sect {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  /* Hide the desktop menu */
+  .navbar a {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: var(--hover-clr); /* Or another color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Show the hamburger icon */
+  .navbar .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  /* Show the menu when active */
+  .navbar ul.active {
+    display: flex;
+  }
+
+  /* Adjust Resume button */
+  #Resume {
+    display: none; /* Hide for space, or move it inside the menu */
+  }
+
+  /* Adjust sidebars */
   .sidebar {
     display: none;
   }
