@@ -7,7 +7,7 @@
   --text-clr: white;
   --suptext-clr: #8892b0;
   --transition: normal 0.25s ease;
-  --about-box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.3)
+  --about-box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.3);
 }
 
 /*
@@ -20,16 +20,26 @@
 }
 
 * {
-  scrollbar-width: none;  /* Firefox */
+  scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;
 }
 
 @keyframes starAnim {
-  0% { transform: translateY(0); }
-  25% { transform: translateY(-30px) rotate(-20deg); }
-  50% { transform: translateY(-30px) rotate(20deg); }
-  75% { transform: translateY(-30px) rotate(-20deg); }
-  100% { transform: translateY(0) rotate(0deg); }
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-30px) rotate(-20deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(20deg);
+  }
+  75% {
+    transform: translateY(-30px) rotate(-20deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
 }
 
 html {
@@ -120,7 +130,7 @@ footer a {
   font-size: 1.2rem;
   cursor: pointer;
   margin-left: 1%;
-  
+
   &:hover {
     color: var(--accent-clr);
   }
@@ -164,6 +174,17 @@ footer a {
   }
 }
 
+/* Hamburger menu */
+
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--text-clr);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 /*
 ========== SOCIALS ==========
 */
@@ -203,7 +224,7 @@ footer a {
 
   &:hover {
     transform: scale(1.05) rotate(90deg) translateX(-5px);
-  color: var(--accent-clr);
+    color: var(--accent-clr);
   }
 }
 
@@ -254,12 +275,12 @@ main {
 
 .hero-intro {
   color: var(--accent-clr);
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-weight: 500;
 }
 
 .hero-name {
-  font-size: 4.4rem;
+  font-size: 4.4em;
   font-weight: 700;
   color: var(--text-clr);
   margin-top: 50px;
@@ -267,7 +288,7 @@ main {
 }
 
 .hero-subtitle {
-  font-size: 3.8rem;
+  font-size: 3.8em;
   font-weight: 700;
   color: var(--suptext-clr);
   margin-top: 10px;
@@ -277,7 +298,7 @@ main {
 
 .hero-description {
   margin-bottom: 6vh;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   max-width: 750px;
   color: var(--suptext-clr);
   line-height: 1.5;
@@ -295,7 +316,7 @@ main {
 
 #CTA-Btn {
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-weight: 150;
   text-decoration: none;
   letter-spacing: 0.2rem;
@@ -306,7 +327,7 @@ main {
   cursor: pointer;
   padding: 15px 40px;
   transition: var(--transition);
-  
+
   &:hover {
     transform: scale(1.05) translateY(-5px);
     background-color: var(--accent-clr);
@@ -352,16 +373,16 @@ main {
   cursor: pointer;
   object-fit: contain;
   transition: var(--transition);
-
-  &:hover {
-    transform: scale(1.1);
-  }
 }
 
 .edu-item {
   position: relative;
   display: flex;
   justify-content: center;
+
+  &:hover img {
+    transform: scale(1.05);
+  }
 }
 
 .pfp {
@@ -445,7 +466,6 @@ main {
   visibility: visible;
 }
 
-
 /*
 ========== SKILLS ==========
 */
@@ -466,20 +486,24 @@ main {
   height: 15%;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.3);
   gap: 5%;
+  transition: var(--transition);
 
-  &:hover svg{
-    transform: scale(1.1);
+  &:hover {
+    transform: scale(1.05) translateY(-6px);
+    box-shadow: 0 4px 16px 8px rgba(0, 0, 0, 0.3);
   }
 
   &:hover .skill-name {
     opacity: 1;
-  visibility: visible;
+    visibility: visible;
   }
 }
 
 .content svg {
-  width: 100%;
+  margin-top: 5%;
+  width: 90%;
   height: calc(80% - 10px);
   transition: var(--transition);
 }
@@ -519,7 +543,7 @@ main {
     transform: scale(1.05);
     filter: brightness(100%);
     box-shadow: 0 0 8px 4px rgba(0, 247, 255, 0.336);
-    border: 1px solid rgba(0, 247, 255, 0.336)  ;
+    border: 1px solid rgba(0, 247, 255, 0.336);
   }
 }
 
@@ -580,7 +604,7 @@ main {
   cursor: pointer;
   padding: 15px 10px;
   transition: var(--transition);
-  
+
   &:hover {
     transform: scale(1.05) translateY(-5px);
     background-color: var(--accent-clr);
@@ -599,7 +623,7 @@ main {
   display: none;
 }
 
-.title label input[type="checkbox"]:checked  ~ .img-2 {
+.title label input[type="checkbox"]:checked ~ .img-2 {
   animation: starAnim 0.5s forwards;
   display: inline;
 }
@@ -710,62 +734,67 @@ main {
 ========== CONTENT ADJUSTMENT ==========
 */
 
-@media (max-width: 768px) {
+/* Laptops */
+
+@media (max-width: 1440px) {
   html {
     font-size: 14px;
   }
+
   .sect {
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-  /* Hide the desktop menu */
-  .navbar a {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: var(--hover-clr); /* Or another color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-left: 10vw;
   }
 
-  /* Show the hamburger icon */
-  .navbar .menu-icon {
-    display: block;
-    cursor: pointer;
+  .about-left {
+    width: 55vh;
   }
 
-  /* Show the menu when active */
-  .navbar ul.active {
-    display: flex;
+
+  /* Tablet */
+  @media (max-width: 1024) {
   }
 
-  /* Adjust Resume button */
-  #Resume {
-    display: none; /* Hide for space, or move it inside the menu */
-  }
+  /* Mobile */
 
-  /* Adjust sidebars */
-  .sidebar {
-    display: none;
-  }
+  @media (max-width: 600px) {
+    html {
+      font-size: 12px;
+    }
 
-  .sidebar-2 {
-    display: none;
-  }
-}
+    /* Hide the desktop menu */
+    .navbar a {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background-color: var(--hover-clr); /* Or another color */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-@media (max-width: 1200px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
+    /* Show the hamburger icon */
+    .navbar .menu-icon {
+      display: block;
+    }
 
-  .hero h2 {
-    font-size: 1.8rem;
-  }
+    /* Show the menu when active */
+    .navbar ul.active {
+      display: flex;
+    }
 
-  .hero p {
-    font-size: 1.2rem;
+    /* Adjust Resume button */
+    #Resume {
+      display: none; /* Hide for space, or move it inside the menu */
+    }
+
+    /* Adjust sidebars */
+    .sidebar {
+      display: none;
+    }
+
+    .sidebar-2 {
+      display: none;
+    }
   }
 }
