@@ -256,6 +256,7 @@ main {
 }
 
 .sect {
+  background-color: var(--hover-clr);
   height: auto;
   justify-content: center;
   padding-top: 25vh;
@@ -263,10 +264,17 @@ main {
 }
 
 .sect .title {
-  font-size: 2rem;
   font-weight: 1000;
   color: var(--text-clr);
   margin-bottom: 20px;
+}
+
+.title-underline {
+  height: 1px;
+  width: 35%;
+  margin-top: 5px;
+  background-color: var(--text-clr);
+  opacity: 0.5;
 }
 
 /*
