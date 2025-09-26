@@ -581,11 +581,36 @@ main {
   cursor: pointer;
 }
 
+.tech-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.right .tech-used {
+  width: fit-content;
+  padding: 5px 20px;
+  font-size: 1rem;
+  color: var(--accent-clr);
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--accent-clr);
+}
+
 .right .captions {
   font-size: 1rem;
   color: var(--suptext-clr);
   margin-top: 10px;
   margin-bottom: 30px;
+}
+
+.project-links-container {
+  display: flex;
+  gap: 1%;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .right .project-link {
@@ -609,6 +634,18 @@ main {
     background-color: var(--accent-clr);
     color: var(--base-clr);
     box-shadow: 0 0 8px 4px rgba(0, 247, 255, 0.336);
+  }
+}
+
+.right svg {
+  width: 40px;
+  fill: var(--suptext-clr);
+  margin-left: 10px;
+  transition: var(--transition);
+
+  &:hover {
+    transform: scale(1.05) translateY(-5px);
+    fill: var(--accent-clr);
   }
 }
 
