@@ -256,7 +256,6 @@ main {
 }
 
 .sect {
-  background-color: var(--hover-clr);
   height: auto;
   justify-content: center;
   padding-top: 25vh;
@@ -497,16 +496,8 @@ main {
   box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.3);
   gap: 5%;
   transition: var(--transition);
-
-  &:hover {
-    transform: scale(1.05) translateY(-6px);
-    box-shadow: 0 4px 16px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  &:hover .skill-name {
-    opacity: 1;
-    visibility: visible;
-  }
+  border-radius: 10px;
+  background-color: #0f203a;
 }
 
 .content svg {
@@ -657,7 +648,7 @@ main {
   margin-right: 15%;
 }
 
-/* Education */
+/* Socials */
 
 .contact-socials {
   display: flex;
@@ -682,59 +673,38 @@ main {
   }
 }
 
-.edu-item {
-  position: relative;
-  display: flex;
-  justify-content: center;
+.Contact-Btn {
+  display: inline;
+  margin-top: 5%;
+  font-size: 1.2em;
+  font-weight: 150;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.2rem;
+  color: var(--accent-clr);
+  border: 1px solid var(--accent-clr);
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 15px 30px;
+  width: 30%;
+  transition: var(--transition);
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: var(--accent-clr);
+    color: var(--base-clr);
+    box-shadow: 0 0 8px 4px rgba(0, 247, 255, 0.336);
+  }
 }
 
-.pfp {
+
+.random-img {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 50vh;
   border-radius: 20px;
-  transition: var(--transition);
-}
-
-/* Tooltip */
-
-.GitHub-name {
-  color: var(--text-clr);
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: var(--transition);
-  letter-spacing: 0.2rem;
-}
-
-.school-name {
-  position: absolute;
-  color: var(--text-clr);
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  margin: 100% auto;
-  transition: var(--transition);
-}
-
-.school-support {
-  position: absolute;
-  color: var(--suptext-clr);
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  margin: calc(100% + 30px) auto;
-  transition: var(--transition);
-}
-
-.school-class {
-  position: absolute;
-  color: var(--suptext-clr);
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  margin: calc(100% + 60px) auto;
   transition: var(--transition);
 }
 
