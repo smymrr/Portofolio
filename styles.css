@@ -138,11 +138,10 @@ footer a {
 
 /* Logo */
 .navbar .logo {
-  margin-left: 0;
   margin-right: auto;
   width: 100px;
   height: calc(100% + 30px);
-  bottom: 0;
+  cursor: pointer;
 }
 
 .logo img {
